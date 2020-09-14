@@ -10,14 +10,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:json2typescript.helloWorld"
+		"onCommand:json2typescript.generate"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "json2typescript.helloWorld",
-				"title": "Hello World"
+				"command": "json2typescript.generate",
+				"title": "Generate TypeScript interfaces from clipboard"
 			}
 		]
 	},
@@ -41,5 +41,8 @@
 		"mocha": "^8.1.3",
 		"typescript": "^4.0.2",
 		"vscode-test": "^1.4.0"
+	},
+	"dependencies": {
+		"json2interface": "^0.1.6"
 	}
 }
