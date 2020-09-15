@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode'
-import * as json2interface from 'json2interface'
+import { generate } from 'json2interface'
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -22,7 +22,7 @@ export function activate (context: vscode.ExtensionContext) {
 
       vscode.env.clipboard.readText().then(value => {
         try {
-          const typeScriptInterfaces = json2interface.generate(value)
+          const typeScriptInterfaces = generate(value)
 
           const activeTextEditor = vscode.window.activeTextEditor
 
