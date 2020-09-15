@@ -16,15 +16,33 @@ function activate(context) {
     // The commandId parameter must match the command field in package.json
     let disposable = vscode.commands.registerCommand('json2typescript.generate', () => {
         const editor = vscode.window.activeTextEditor;
-        try {
-            vscode.env.clipboard.readText().then(value => editor === null || editor === void 0 ? void 0 : editor.edit(editBuilder => {
-                editBuilder.insert(editor.selection.active, json2interface.generate(value));
-            }));
-            vscode.window.showInformationMessage('Valid JSON');
-        }
-        catch (exception) {
-            vscode.window.showErrorMessage('The clipboard does not contains a valid JSON');
-        }
+        vscode.env.clipboard.readText().then(value => {
+            try {
+                const typeScriptInterfaces = json2interface.generate(value);
+                const activeTextEditor = vscode.window.activeTextEditor;
+                if (!activeTextEditor) {
+                    vscode.workspace
+                        .openTextDocument({
+                        language: 'typescript',
+                        content: typeScriptInterfaces
+                    })
+                        .then(document => {
+                        console.log('open...');
+                        vscode.window.showTextDocument(document);
+                    });
+                }
+                else {
+                    activeTextEditor === null || activeTextEditor === void 0 ? void 0 : activeTextEditor.edit(edit => {
+                        const selection = activeTextEditor.selection.active;
+                        edit.insert(selection, typeScriptInterfaces);
+                    });
+                }
+                vscode.window.showInformationMessage('TypeScript interfaces generated');
+            }
+            catch (exception) {
+                vscode.window.showErrorMessage('The clipboard does not contains a valid JSON');
+            }
+        });
     });
     context.subscriptions.push(disposable);
 }

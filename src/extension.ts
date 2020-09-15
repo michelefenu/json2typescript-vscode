@@ -1,35 +1,62 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
-import * as json2interface from 'json2interface';
+import * as vscode from 'vscode'
+import * as json2interface from 'json2interface'
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
+export function activate (context: vscode.ExtensionContext) {
+  // Use the console to output diagnostic information (console.log) and errors (console.error)
+  // This line of code will only be executed once when your extension is activated
+  console.log(
+    'Congratulations, your extension "json2typescript" is now active!'
+  )
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "json2typescript" is now active!');
+  // The command has been defined in the package.json file
+  // Now provide the implementation of the command with registerCommand
+  // The commandId parameter must match the command field in package.json
+  let disposable = vscode.commands.registerCommand(
+    'json2typescript.generate',
+    () => {
+      const editor = vscode.window.activeTextEditor
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('json2typescript.generate', () => {
-		const editor = vscode.window.activeTextEditor;
+      vscode.env.clipboard.readText().then(value => {
+        try {
+          const typeScriptInterfaces = json2interface.generate(value)
 
-		try {
-			vscode.env.clipboard.readText().then(value => editor?.edit(editBuilder => {
-					editBuilder.insert(editor.selection.active, json2interface.generate(value));
-				}));
+          const activeTextEditor = vscode.window.activeTextEditor
 
-			vscode.window.showInformationMessage('Valid JSON');
-		} catch (exception) {
-			vscode.window.showErrorMessage('The clipboard does not contains a valid JSON');
-		}
-	});
+          if (!activeTextEditor) {
+            vscode.workspace
+              .openTextDocument({
+                language: 'typescript',
+                content: typeScriptInterfaces
+              })
+              .then(document => {
+                console.log('open...')
+                vscode.window.showTextDocument(document)
+              })
+          } else {
+            activeTextEditor?.edit(edit => {
+              const selection = activeTextEditor.selection.active
+              edit.insert(selection, typeScriptInterfaces)
+            })
+          }
 
-	context.subscriptions.push(disposable);
+          vscode.window.showInformationMessage(
+            'TypeScript interfaces generated'
+          )
+        } catch (exception) {
+          vscode.window.showErrorMessage(
+            'The clipboard does not contains a valid JSON'
+          )
+        }
+      })
+    }
+  )
+
+  context.subscriptions.push(disposable)
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() { }
+export function deactivate () {}
