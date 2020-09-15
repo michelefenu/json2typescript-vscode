@@ -17,7 +17,7 @@
     "commands": [
       {
         "command": "json2typescript.generate",
-        "title": "Generate TypeScript interfaces from clipboard"
+        "title": "Generate TypeScript interfaces from JSON clipboard"
       }
     ],
     "keybindings": [
