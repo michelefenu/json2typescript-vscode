@@ -1,7 +1,7 @@
 {
   "name": "json2typescript",
-  "displayName": "json2typescript",
-  "description": "Convert JSON to TypeScript interfaces",
+  "displayName": "JSON 2 TypeScript",
+  "description": "Convert JSON data to TypeScript interfaces",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.40.0"
