@@ -1,3 +1,5 @@
+![Tests](https://github.com/michelefenu/json2typescript-vscode/workflows/Tests/badge.svg)
+
 # JSON 2 TypeScript
 
 JSON 2 TypeScript is a Visual Studio Code extension to generate TypeScript interfaces from JSON data.
