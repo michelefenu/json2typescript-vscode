@@ -30,7 +30,7 @@
       }
     ]
   },
-  "icon": "./assets/icon256x256.png",
+  "icon": "./assets/icon-256x256.png",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
