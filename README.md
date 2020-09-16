@@ -1,4 +1,4 @@
-![VS Code Marketplace](https://github.com/michelefenu/json2typescript-vscode/workflows/Tests/badge.svg)
+![VS Code Marketplace](https://github.com/michelefenu/json2typescript-vscode/workflows/VS%20Code%20Marketplace/badge.svg)
 
 # JSON 2 TypeScript
 
