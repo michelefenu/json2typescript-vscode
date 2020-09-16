@@ -5,9 +5,8 @@ name: VS Code Marketplace
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches:
+      - master
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -53,4 +52,4 @@ jobs:
         env:
           PUBLISHER_TOKEN: ${{ secrets.PUBLISHER_TOKEN }}
         with:
-          args: publish -p $PUBLISHER_TOKEN 
+          args: publish -p $PUBLISHER_TOKEN
