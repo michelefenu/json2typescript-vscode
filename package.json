@@ -3,7 +3,7 @@
   "displayName": "JSON 2 TypeScript",
   "private": true,
   "description": "Convert JSON data to TypeScript interfaces",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "publisher": "michelefenu",
   "repository": {
     "type": "git",
@@ -15,9 +15,13 @@
   "engines": {
     "vscode": "^1.49.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "preview": true,
-  "activationEvents": ["onCommand:json2typescript.generate"],
+  "activationEvents": [
+    "onCommand:json2typescript.generate"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -33,7 +37,7 @@
       }
     ]
   },
-  "icon": "assets/icon-256x256.png",
+  "icon": "images/icon-256x256.png",
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -58,13 +62,21 @@
     "vscode-test": "^1.4.0"
   },
   "dependencies": {
-    "json2interface": "^0.1.9"
+    "json2interface": "^0.1.13"
   },
   "release": {
     "branches": "master",
-    "verifyConditions": ["@semantic-release/github"],
-    "publish": ["@semantic-release/github"],
-    "success": ["@semantic-release/github"],
-    "fail": ["@semantic-release/github"]
+    "verifyConditions": [
+      "@semantic-release/github"
+    ],
+    "publish": [
+      "@semantic-release/github"
+    ],
+    "success": [
+      "@semantic-release/github"
+    ],
+    "fail": [
+      "@semantic-release/github"
+    ]
   }
 }
