@@ -1,15 +1,20 @@
 {
   "name": "json2typescript",
   "displayName": "JSON 2 TypeScript",
+  "private": true,
   "description": "Convert JSON data to TypeScript interfaces",
   "version": "0.0.1",
   "publisher": "michelefenu",
   "engines": {
     "vscode": "^1.0.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "preview": true,
-  "activationEvents": ["onCommand:json2typescript.generate"],
+  "activationEvents": [
+    "onCommand:json2typescript.generate"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -35,6 +40,7 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
+    "@semantic-release/github": "^7.1.1",
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.0.0",
     "@types/node": "^14.0.27",
@@ -49,5 +55,20 @@
   },
   "dependencies": {
     "json2interface": "^0.1.9"
-  }
+  },
+  "release": {
+		"branches": "master",
+		"verifyConditions": [
+			"@semantic-release/github"
+		],
+		"publish": [
+			"@semantic-release/github"
+		],
+		"success": [
+			"@semantic-release/github"
+		],
+		"fail": [
+			"@semantic-release/github"
+		]
+	}
 }
