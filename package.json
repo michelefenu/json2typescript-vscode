@@ -5,14 +5,11 @@
   "version": "0.0.1",
   "publisher": "michelefenu",
   "engines": {
-    "vscode": "^1.40.0"
+    "vscode": "^1.0.0"
   },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:json2typescript.generate"
-  ],
+  "categories": ["Other"],
+  "preview": true,
+  "activationEvents": ["onCommand:json2typescript.generate"],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -28,6 +25,7 @@
       }
     ]
   },
+  "icon": "https://raw.githubusercontent.com/michelefenu/json2typescript-vscode/master/assets/icon256x256.png",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
