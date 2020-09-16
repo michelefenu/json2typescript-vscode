@@ -24,11 +24,7 @@
     "keybindings": [
       {
         "command": "json2typescript.generate",
-        "key": "cmd+shift+V"
-      },
-      {
-        "command": "json2typescript.generate",
-        "key": "ctrl+shift+V"
+        "key": "alt+shift+V"
       }
     ]
   },
