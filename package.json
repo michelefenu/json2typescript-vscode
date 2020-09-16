@@ -30,7 +30,7 @@
       }
     ]
   },
-  "icon": "https://raw.githubusercontent.com/michelefenu/json2typescript-vscode/master/assets/icon256x256.png",
+  "icon": "./assets/icon256x256.png",
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
