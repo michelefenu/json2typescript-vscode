@@ -5,16 +5,16 @@
   "description": "Convert JSON data to TypeScript interfaces",
   "version": "0.0.2",
   "publisher": "michelefenu",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michelefenu/json2typescript-vscode.git"
+  },
   "engines": {
     "vscode": "^1.49.0"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "preview": true,
-  "activationEvents": [
-    "onCommand:json2typescript.generate"
-  ],
+  "activationEvents": ["onCommand:json2typescript.generate"],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -57,18 +57,10 @@
     "json2interface": "^0.1.9"
   },
   "release": {
-		"branches": "master",
-		"verifyConditions": [
-			"@semantic-release/github"
-		],
-		"publish": [
-			"@semantic-release/github"
-		],
-		"success": [
-			"@semantic-release/github"
-		],
-		"fail": [
-			"@semantic-release/github"
-		]
-	}
+    "branches": "master",
+    "verifyConditions": ["@semantic-release/github"],
+    "publish": ["@semantic-release/github"],
+    "success": ["@semantic-release/github"],
+    "fail": ["@semantic-release/github"]
+  }
 }
