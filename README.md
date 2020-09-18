@@ -1,4 +1,4 @@
-![CodeQL](https://github.com/michelefenu/json2typescript-vscode/workflows/CodeQL/badge.svg)
+![CodeQL](https://github.com/michelefenu/json2typescript-vscode/workflows/CodeQL/badge.svg) ![Release](https://github.com/michelefenu/json2typescript-vscode/workflows/Release/badge.svg) 
  ![VS Code Marketplace](https://github.com/michelefenu/json2typescript-vscode/workflows/VS%20Code%20Marketplace/badge.svg) 
 # JSON 2 TypeScript
 
