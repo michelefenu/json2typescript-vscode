@@ -91,6 +91,11 @@
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }
       ]
-    ]
-  }
+    ],
+    {
+    "scripts": {
+      "postpublish": "cp -r dist/package.json ."
+    }
+  }  
+}
 }
