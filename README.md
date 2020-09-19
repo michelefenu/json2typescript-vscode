@@ -1,5 +1,5 @@
-![CodeQL](https://github.com/michelefenu/json2typescript-vscode/workflows/CodeQL/badge.svg) ![Release](https://github.com/michelefenu/json2typescript-vscode/workflows/Release/badge.svg) 
- ![VS Code Marketplace](https://github.com/michelefenu/json2typescript-vscode/workflows/VS%20Code%20Marketplace/badge.svg) 
+![CodeQL](https://github.com/michelefenu/json2typescript-vscode/workflows/CodeQL/badge.svg) 
+ ![VS Code Marketplace](https://github.com/michelefenu/json2typescript-vscode/workflows/VS%20Code%20Marketplace/badge.svg)
 # JSON 2 TypeScript
 
 JSON 2 TypeScript is a Visual Studio Code extension to generate TypeScript interfaces from JSON data.
