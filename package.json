@@ -71,9 +71,6 @@
       "@semantic-release/changelog"
     ],
     "prepare": [
-      ["@semantic-release/changelog", {
-        "changelogFile": "docs/CHANGELOG.md"
-      }],
       "@semantic-release/npm",
       {
         "path": "@semantic-release/git",
@@ -88,6 +85,11 @@
     "fail": [
       "@semantic-release/npm",
       "@semantic-release/git"
+    ],
+    "plugins": [
+      ["@semantic-release/changelog", {
+        "changelogFile": "docs/CHANGELOG.md"
+      }]
     ]
   }
 }
