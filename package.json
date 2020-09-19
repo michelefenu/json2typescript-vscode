@@ -71,22 +71,31 @@
     "branches": "master",
     "release": {
       "verifyConditions": [
-        "@semantic-release/github",
-        "@semantic-release/git"
+        "@semantic-release/github"
       ],
       "prepare": [
         "@semantic-release/github",
+        [ "@semantic-release/git",
         {
-          "path": "@semantic-release/git",
           "assets": [ "package.json" ],
           "message": "Release: ${nextRelease.version}"
-        }
+        }]
       ],
       "publish": [
-        "@semantic-release/github"
+        "@semantic-release/github",
+        [ "@semantic-release/git",
+        {
+          "assets": [ "package.json" ],
+          "message": "Release: ${nextRelease.version}"
+        }]
       ],
       "fail": [
-        "@semantic-release/github"
+        "@semantic-release/github",
+        [ "@semantic-release/git",
+        {
+          "assets": [ "package.json" ],
+          "message": "Release: ${nextRelease.version}"
+        }]
       ]
     }
   }
