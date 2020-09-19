@@ -31,7 +31,7 @@ jobs:
         with:
           run: npm test
   publish:
-    name: Release
+    name: Release and publish
     needs: test
     runs-on: ubuntu-18.04
     steps:
