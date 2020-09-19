@@ -66,8 +66,7 @@
     "branches": "master",
     "verifyConditions": [
       "@semantic-release/npm",
-      "@semantic-release/git",
-      "@semantic-release/changelog"
+      "@semantic-release/git"
     ],
     "prepare": [
       "@semantic-release/npm",
