@@ -14,20 +14,17 @@ async function generateInterfaces () {
 
   try {
     const typeScriptInterfaces = generate(clipBoardContent)
-
     const activeTextEditor = vscode.window.activeTextEditor
 
     if (!activeTextEditor) {
-      vscode.workspace
+      const document = await vscode.workspace
         .openTextDocument({
           language: 'typescript',
           content: typeScriptInterfaces
         })
-        .then(document => {
-          vscode.window.showTextDocument(document)
-        })
+      await vscode.window.showTextDocument(document)
     } else {
-      activeTextEditor.edit(edit => {
+      await activeTextEditor.edit(edit => {
         const selection = activeTextEditor.selection.active
         edit.insert(selection, typeScriptInterfaces)
       })
